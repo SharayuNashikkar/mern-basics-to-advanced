@@ -40,3 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
 function greet(name) {
     return `Hello, ${name}!`;
 }
+
+// getElementsByClassName Examples
+
+// Example 1: Get all elements with a specific class
+const allHighlightedElements = document.getElementsByClassName('highlight');
+console.log('Highlighted elements:', allHighlightedElements);
+
+// Example 2: Loop through elements with a class and modify them
+const cards = document.getElementsByClassName('card');
+for (let i = 0; i < cards.length; i++) {
+    cards[i].style.backgroundColor = '#f0f0f0';
+}
+
+// Example 3: Get elements with a class and change text content
+const titles = document.getElementsByClassName('title');
+for (let title of titles) {
+    title.textContent = title.textContent.toUpperCase();
+}
