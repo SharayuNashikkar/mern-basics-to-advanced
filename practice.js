@@ -58,3 +58,18 @@ const titles = document.getElementsByClassName('title');
 for (let title of titles) {
     title.textContent = title.textContent.toUpperCase();
 }
+
+// querySelector Examples
+
+// Example 1: Select single element using querySelector
+const mainSection = document.querySelector('.main-section');
+if (mainSection) {
+    mainSection.style.border = '2px solid blue';
+}
+
+// Example 2: Select element with querySelector and chain methods
+const submitButton = document.querySelector('button[type="submit"]');
+if (submitButton) {
+    submitButton.textContent = 'Submit Form';
+    submitButton.classList.add('btn-primary');
+}
