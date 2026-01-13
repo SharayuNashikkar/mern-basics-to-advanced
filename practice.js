@@ -1,4 +1,4 @@
-// Basic App JavaScript - getElementById Examples
+// Basic App JavaScript - DOM method Examples
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('App initialized');
@@ -73,3 +73,21 @@ if (submitButton) {
     submitButton.textContent = 'Submit Form';
     submitButton.classList.add('btn-primary');
 }
+
+// querySelectorAll Examples
+
+// Example 1: Select all elements with querySelectorAll and loop through them
+const allButtons = document.querySelectorAll('button');
+allButtons.forEach(function(button) {
+    button.style.padding = '10px 20px';
+    button.style.cursor = 'pointer';
+});
+
+// Example 2: Select multiple elements using complex selector and apply styles
+const activeItems = document.querySelectorAll('.menu .item.active');
+activeItems.forEach(function(item) {
+    item.style.backgroundColor = '#ffeb3b';
+    item.addEventListener('click', function() {
+        console.log('Active item clicked:', item.textContent);
+    });
+});
