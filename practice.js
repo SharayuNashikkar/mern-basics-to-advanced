@@ -91,3 +91,37 @@ activeItems.forEach(function(item) {
         console.log('Active item clicked:', item.textContent);
     });
 });
+// childNodes and children Examples
+
+// Example 1: Access all child nodes (including text nodes and comments)
+const container = document.querySelector('.container');
+if (container) {
+    console.log('All child nodes:', container.childNodes);
+    console.log('Number of child nodes:', container.childNodes.length);
+    
+    // Loop through child nodes
+    container.childNodes.forEach(function(node, index) {
+        console.log(`Child node ${index}:`, node.nodeType, node.nodeName);
+    });
+}
+
+// Example 2: Access only element children (excludes text nodes and comments)
+const listElement = document.querySelector('ul');
+if (listElement) {
+    console.log('Element children:', listElement.children);
+    console.log('Number of element children:', listElement.children.length);
+    
+    // Loop through element children
+    for (let i = 0; i < listElement.children.length; i++) {
+        const child = listElement.children[i];
+        child.style.color = 'blue';
+        console.log(`Child element ${i}:`, child.tagName, child.textContent);
+    }
+}
+
+// Example 3: Compare childNodes vs children
+const parentDiv = document.querySelector('.parent');
+if (parentDiv) {
+    console.log('childNodes count:', parentDiv.childNodes.length);
+    console.log('children count:', parentDiv.children.length);
+}
