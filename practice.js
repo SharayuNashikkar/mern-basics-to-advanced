@@ -125,3 +125,47 @@ if (parentDiv) {
     console.log('childNodes count:', parentDiv.childNodes.length);
     console.log('children count:', parentDiv.children.length);
 }
+
+// getElementsByName Examples
+
+// Example 1: Get all radio buttons with the same name (gender radio group)
+const genderRadios = document.getElementsByName('gender');
+console.log('Gender radio buttons:', genderRadios);
+console.log('Number of gender options:', genderRadios.length);
+
+// Loop through radio buttons and check their values
+for (let i = 0; i < genderRadios.length; i++) {
+    const radio = genderRadios[i];
+    console.log(`Radio ${i + 1}:`, radio.value, radio.checked ? '(checked)' : '(unchecked)');
+}
+
+// Example 2: Get textarea elements by name
+const nameTextarea = document.getElementsByName('Name');
+const addressTextarea = document.getElementsByName('address');
+
+console.log('Name textarea elements:', nameTextarea);
+console.log('Address textarea elements:', addressTextarea);
+
+// Access the first element of the NodeList (since names should be unique)
+if (nameTextarea.length > 0) {
+    console.log('Name textarea value:', nameTextarea[0].value);
+}
+
+if (addressTextarea.length > 0) {
+    console.log('Address textarea value:', addressTextarea[0].value);
+}
+
+// Example 3: Add event listeners to radio buttons using getElementsByName
+const genderOptions = document.getElementsByName('gender');
+genderOptions.forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        console.log('Selected gender:', this.value);
+        
+        // Update other radio buttons in the group
+        genderOptions.forEach(function(otherRadio) {
+            if (otherRadio !== this) {
+                otherRadio.checked = false;
+            }
+        }, this);
+    });
+});
