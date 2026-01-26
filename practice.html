@@ -5,10 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My App</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .radio-group {
+            margin: 10px 0;
+            text-align: left;
+            gap: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My App</h1>
+        <h1 style="text-align: center;">Welcome to My App</h1>
     </header>
     <main>
         <section id="content">
@@ -30,13 +70,31 @@
             <p>We are dedicated to providing the best service to our users. Our team works hard to ensure quality and excellence in everything we do.</p>
         </section>
         
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
+       <section id="Contact Us">
+            <h2>Get in touch</h2>
+            <form id="sampleForm">
+                <div class="form-group">
+                    <label for="Name">Name:</label>
+                    <textarea id="Name" name="Name" rows="1" placeholder="Your Name"></textarea>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Address">Address:</label>
+                    <textarea id="Address" name="address" rows="3" placeholder="Enter your address here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <h4>Gender</h4>
+                    <div class="radio-group">
+                        <input type="radio" id="option1" name="gender" value="Male" checked>
+                        <label for="option1">Male</label>
+                        <input type="radio" id="option2" name="gender" value="Female" checked>
+                        <label for="option2">Female</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn">Submit Form</button>
             </form>
         </section>
     </main>
