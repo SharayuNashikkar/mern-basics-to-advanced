@@ -1,35 +1,23 @@
 document.getElementById("convertBtn").addEventListener("click", function () {
-    // Get input values
-    const temperature = parseFloat(
-      document.getElementById("temperatureInput").value
-    );
+    const temperatureInput = document.getElementById("temperature");
     const conversionType = document.getElementById("conversionType").value;
-    const resultDiv = document.getElementById("result");
+    const result = document.getElementById("result");
   
-    // Clear previous result
-    resultDiv.innerHTML = "";
+    const temperature = parseFloat(temperatureInput.value);
+    result.innerHTML = "";
   
-    // Validate input
     if (isNaN(temperature)) {
-      resultDiv.innerHTML = "Please enter a valid number";
+      result.innerHTML = "Please enter a valid number.";
       return;
     }
   
-    let convertedTemperature;
+    let convertedTemp;
   
-    // Conversion logic
     if (conversionType === "toCelsius") {
-      // Fahrenheit to Celsius
-      convertedTemperature = (temperature - 32) * (5 / 9);
-      resultDiv.innerHTML = `${temperature}°F is equal to ${convertedTemperature.toFixed(
-        2
-      )}°C`;
-    } else if (conversionType === "toFahrenheit") {
-      // Celsius to Fahrenheit
-      convertedTemperature = temperature * (9 / 5) + 32;
-      resultDiv.innerHTML = `${temperature}°C is equal to ${convertedTemperature.toFixed(
-        2
-      )}°F`;
+      convertedTemp = (temperature - 32) * (5 / 9);
+      result.innerHTML = `${temperature}°F = ${convertedTemp.toFixed(2)}°C`;
+    } else {
+      convertedTemp = (temperature * 9) / 5 + 32;
+      result.innerHTML = `${temperature}°C = ${convertedTemp.toFixed(2)}°F`;
     }
   });
-  

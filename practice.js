@@ -1,4 +1,4 @@
-// Basic App JavaScript - getElementById Examples
+// Basic App JavaScript - DOM method Examples
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('App initialized');
@@ -91,7 +91,6 @@ activeItems.forEach(function(item) {
         console.log('Active item clicked:', item.textContent);
     });
 });
-
 // childNodes and children Examples
 
 // Example 1: Access all child nodes (including text nodes and comments)
@@ -125,9 +124,6 @@ const parentDiv = document.querySelector('.parent');
 if (parentDiv) {
     console.log('childNodes count:', parentDiv.childNodes.length);
     console.log('children count:', parentDiv.children.length);
-    
-    // childNodes includes text nodes (whitespace between elements)
-    // children only includes element nodes
 }
 
 // getElementsByName Examples
@@ -173,5 +169,3 @@ genderOptions.forEach(function(radio) {
         }, this);
     });
 });
-
-

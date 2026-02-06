@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Temperature Converter</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,14 +10,14 @@
   <div class="container">
     <h1>Temperature Converter</h1>
 
-    <label for="temperatureInput">Enter Temperature</label>
+    <label for="temperature">Enter Temperature</label>
     <input
       type="number"
-      id="temperatureInput"
+      id="temperature"
       placeholder="Enter temperature"
     />
 
-    <label for="conversionType">Convert to</label>
+    <label for="conversionType">Convert To</label>
     <select id="conversionType">
       <option value="toCelsius">Celsius</option>
       <option value="toFahrenheit">Fahrenheit</option>
@@ -31,8 +28,6 @@
     <p id="result"></p>
   </div>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
-
 </body>
 </html>
