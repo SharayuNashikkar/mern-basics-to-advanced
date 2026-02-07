@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Splitter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>💸 Expense Splitter</h1>
+
+    <div class="section">
+      <h3>Add Friend</h3>
+      <input type="text" id="friendName" placeholder="Friend name">
+      <button onclick="addFriend()">Add</button>
+      <ul id="friendsList"></ul>
+    </div>
+
+    <div class="section">
+      <h3>Add Expense</h3>
+      <input type="text" id="expenseDesc" placeholder="Expense description">
+      <input type="number" id="expenseAmount" placeholder="Amount">
+      <select id="paidBy"></select>
+      <button onclick="addExpense()">Add Expense</button>
+      <ul id="expenseList"></ul>
+    </div>
+
+    <div class="section">
+      <h3>💰 Settlement</h3>
+      <button onclick="calculateSplit()">Calculate</button>
+      <ul id="result"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
